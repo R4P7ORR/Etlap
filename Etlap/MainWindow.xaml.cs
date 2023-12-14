@@ -77,7 +77,7 @@ namespace Etlap
 				MessageBoxResult result = MessageBox.Show($"Biztosan módosítani akarja {selected.nev}-t?", "Százalékos Módosítás", MessageBoxButton.YesNo);
 				if (result == MessageBoxResult.Yes)
 				{
-					service.ModData(selected, int.Parse(raisePercent.Text) / 100);
+					service.ModData(selected, double.Parse(raisePercent.Text) / 100);
 					foodTable.ItemsSource = service.LoadData();
 				}
 			}
@@ -86,7 +86,7 @@ namespace Etlap
 				MessageBoxResult result = MessageBox.Show($"Biztosan módosítani akarja az összes ételt?", "Százalékos Módosítás", MessageBoxButton.YesNo);
 				if (result == MessageBoxResult.Yes)
 				{
-					service.ModData(int.Parse(raisePercent.Text) / 100);
+					service.ModData(double.Parse(raisePercent.Text) / 100);
 					foodTable.ItemsSource = service.LoadData();
 				}
 			}

@@ -106,7 +106,7 @@ namespace Etlap
 			using (MySqlConnection conn = new MySqlConnection(conString))
 			{
 				conn.Open();
-				string sql = "UPDATE etlap SET ar=ar*@perc WHERE id=@sel";
+				string sql = "UPDATE etlap SET ar=ar+ar*@perc WHERE id=@sel";
 				MySqlCommand command = conn.CreateCommand();
 				command.CommandText = sql;
 				command.Parameters.AddWithValue("@sel", selected.id);
@@ -120,7 +120,7 @@ namespace Etlap
 			using (MySqlConnection conn = new MySqlConnection(conString))
 			{
 				conn.Open();
-				string sql = "UPDATE etlap SET ar=ar*@perc";
+				string sql = "UPDATE etlap SET ar=ar+ar*@perc";
 				MySqlCommand command = conn.CreateCommand();
 				command.CommandText = sql;
 				command.Parameters.AddWithValue("@perc", percent);

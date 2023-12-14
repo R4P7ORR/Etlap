@@ -33,11 +33,6 @@ namespace Etlap
 				MessageBox.Show("Kérem adjon meg egy nevet!");
 				return;
 			}
-			if (inputDescript.Text.Trim().Length < 1)
-			{
-				MessageBox.Show("Kérem adjon meg egy leírást!");
-				return;
-			}
 			if (inputPrice.Text.Trim().Length < 1)
 			{
 				MessageBox.Show("Kérem adjon meg egy árat!");
